@@ -8,7 +8,7 @@ package="com.example.learning2">
     android:supportsRtl="true"
     android:theme="@style/Theme.Learning2">
     <activity
-        android:name=".HelloWorld"
+        android:name=".LogIn"
         android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />

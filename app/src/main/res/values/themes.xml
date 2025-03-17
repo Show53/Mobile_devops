@@ -1,9 +1,22 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Learning2" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="customMaterialButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/violet</item>
     </style>
 
-    <style name="Theme.Learning2" parent="Base.Theme.Learning2" />
+    <style name="customTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/violet</item>
+        <item name="hintTextColor">@color/grey</item>
+        <item name="boxCornerRadiusBottomStart">4dp</item>
+        <item name="boxCornerRadiusBottomEnd">4dp</item>
+        <item name="boxCornerRadiusTopStart">4dp</item>
+        <item name="boxCornerRadiusTopEnd">4dp</item>
+    </style>
+
+    <style name="Theme.Learning2" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="textInputStyle" type="attr">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
+        <item name="materialButtonStyle" type="attr">@style/customMaterialButton</item>
+        <item name="android:textColorHint">@color/grey</item>
+        <item name="fontFamily">sans-serif</item>
+        <item name="android:windowElevation">0dp</item>
+    </style>
 </resources>

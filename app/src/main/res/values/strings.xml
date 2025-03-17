@@ -1,4 +1,21 @@
 <resources>
     <string name="app_name">Learning 2</string>
     <string name="label_hello_world">HelloWorld!</string>
+    <string name="welcome_activity_text0">Пожалуй, лучший\nфитнес трекер в ДВФУ</string>
+    <string name="welcome_activity_text1">Созданный студентами</string>
+    <string name="Cyclists">Cyclists ride in a group</string>
+    <string name="welcome_activity_button_text0">Зарегистрироваться</string>
+    <string name="welcome_activity_button_text1">Уже есть аккаунт?</string>
+    <string name="registration_activity_app_bar_title">Регистрация</string>
+    <string name="registration_activity_login_text_input">Логин</string>
+    <string name="registration_activity_nick_text_input">Имя или никнейм</string>
+    <string name="registration_activity_password_text_input">Пароль</string>
+    <string name="registration_activity_rep_password_text_input">Повторите пароль</string>
+    <string name="registration_activity_title_sex">Пол</string>
+    <string name="registration_activity_check_box_1">Мужской</string>
+    <string name="registration_activity_check_box_2">Женский</string>
+    <string name="registration_activity_check_box_3">Другое</string>
+    <string name="registration_activity_privacy_policy">Нажимая на кнопку, вы соглашаетесь\nс<font color='#4B09F3'>политикой конфиденциальности</font> и обработки персональных данных, а также принимаете <font color='#4B09F3'>пользовательское соглашение</font></string>
+    <string name="log_in_activity_app_bar_title">Вход</string>
+    <string name="log_in_activity_button_text0">Войти</string>
 </resources>
