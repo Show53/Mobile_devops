@@ -18,4 +18,11 @@
     <string name="registration_activity_privacy_policy">Нажимая на кнопку, вы соглашаетесь\nс<font color='#4B09F3'>политикой конфиденциальности</font> и обработки персональных данных, а также принимаете <font color='#4B09F3'>пользовательское соглашение</font></string>
     <string name="log_in_activity_app_bar_title">Вход</string>
     <string name="log_in_activity_button_text0">Войти</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bottom_nav_menu_activities">Активность</string>
+    <string name="bottom_nav_menu_person">Профиль</string>
+    <string name="ic_main_button_description">button</string>
+    <string name="fragment_activity_tab_mine_text">Мои</string>
+    <string name="fragment_activity_tab_users_text">Пользователей</string>
 </resources>
