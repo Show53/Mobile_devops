@@ -1,9 +1,12 @@
 package com.example.learning2
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatImageButton
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,20 +30,33 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        showTabLayout()
+    }
+
     private fun switchToFragment(tag: String, fragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val transaction = fragmentManager.beginTransaction()
 
-        val activeFragment = fragmentManager.findFragmentById(R.id.nav_fragment)
-        activeFragment?.let { transaction.hide(it) }
+        val existingFragment = fragmentManager.findFragmentByTag(tag)
 
-        var newFragment = fragmentManager.findFragmentByTag(tag)
-        if (newFragment == null) {
-            newFragment = fragment
-            transaction.add(R.id.nav_fragment, newFragment, tag)
+        if (existingFragment == null) {
+            transaction.replace(R.id.nav_fragment, fragment, tag)
         } else {
-            transaction.show(newFragment)
+            transaction.show(existingFragment)
         }
+
         transaction.commit()
+    }
+
+    fun hideTabLayout() {
+        val tabLayout = findViewById<TabLayout>(R.id.tab_layout)
+        tabLayout.visibility = View.GONE // Скрываем TabLayout
+    }
+
+    fun showTabLayout() {
+        val tabLayout = findViewById<TabLayout>(R.id.tab_layout)
+        tabLayout.visibility = View.VISIBLE // Показываем TabLayout
     }
 }

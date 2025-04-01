@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingHorizontal="16dp"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@android:color/transparent"
+        android:paddingVertical="16dp"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:navigationIcon="@drawable/ic_action_back"
+                app:layout_collapseMode="pin" />
+
+            <TextView
+                android:id="@+id/expanded_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="56dp"
+                android:text="@string/fragment_item_detail_toolbar_title"
+                android:textColor="@color/black"
+                android:textFontWeight="600"
+                android:textSize="20sp" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ConstraintLayoutTextBoxes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+
+                <TextView
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/list_item_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/violet"
+                    android:textSize="16sp"
+                    android:textFontWeight="400"
+                    android:text="@string/list_item_user_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:layout_marginTop="24dp"
+                    android:id="@+id/list_item_distance_counter"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/list_item_user_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textFontWeight="700"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fragment_item_detail_distance">
+                </TextView>
+
+                <TextView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/list_item_distance_counter"
+                    android:id="@+id/list_item_date_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/grey"
+                    android:textSize="16sp"
+                    android:textAlignment="textEnd"
+                    android:textFontWeight="400"
+                    android:text="@string/list_item_date_time"/>
+
+                <TextView
+                    android:layout_marginTop="24dp"
+                    android:id="@+id/list_item_duration"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/list_item_date_time"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textFontWeight="700"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fragment_item_detail_duration">
+                </TextView>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    app:layout_constraintTop_toBottomOf="@+id/list_item_duration"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:id="@+id/list_item_start_time"
+                        android:layout_width="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.6"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textFontWeight="400"
+                        android:text="@string/list_item_start_time"/>
+
+                    <TextView
+                        android:id="@+id/list_item_start_value_time"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3.1"
+                        android:textColor="@color/grey"
+                        android:textSize="16sp"
+                        android:textFontWeight="400"
+                        android:text="@string/list_item_start_value_time"/>
+
+                    <TextView
+                        android:id="@+id/list_item_separator"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:textColor="@color/grey"
+                        android:textSize="16sp"
+                        android:textAlignment="center"
+                        android:textFontWeight="400"
+                        android:text="@string/Separator"/>
+
+                    <TextView
+                        android:id="@+id/list_item_end_time"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.5"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textFontWeight="400"
+                        android:textAlignment="textStart"
+                        android:text="@string/list_item_end_time"/>
+
+                    <TextView
+                        android:id="@+id/list_item_end_value_time"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3.6"
+                        android:textColor="@color/grey"
+                        android:textSize="16sp"
+                        android:textAlignment="textStart"
+                        android:textFontWeight="400"
+                        android:text="@string/list_item_end_value_time"/>
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_weight="4"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginTop="36dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="12dp"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/list_item_comment"
+                    android:background="@drawable/border"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/grey"
+                    android:textSize="16sp"
+                    android:textAlignment="textStart"
+                    android:textFontWeight="400"
+                    android:text="@string/list_item_comment"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
