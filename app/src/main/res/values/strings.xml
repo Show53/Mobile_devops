@@ -48,4 +48,14 @@
     <string name="fragment_change_password_old">Старый пароль</string>
     <string name="fragment_change_password_new">Новый пароль</string>
     <string name="fragment_change_password_repeat_new">Повторите пароль</string>
+    <string name="new_activity_menu_title">Погнали? :)</string>
+    <string name="new_activitie_button_text">Начать</string>
+    <string name="new_item_bicycle">Велосипед</string>
+    <string name="new_item_running">Бег</string>
+    <string name="new_item_swimming">Плавание</string>
+    <string name="activity_type">activity_type</string>
+    <string name="value_of_distance">val_of_dist</string>
+    <string name="time_of_distance">tim_of_dist</string>
+    <string name="separator">|</string>
+    <string name="list_item_separator">|</string>
 </resources>

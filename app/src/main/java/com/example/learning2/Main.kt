@@ -1,9 +1,10 @@
 package com.example.learning2
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatImageButton
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.tabs.TabLayout
@@ -27,6 +28,12 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_profile -> switchToFragment("PROFILE_FRAGMENT", ProfileFragment())
             }
             true
+        }
+
+        val newActivityButton: ImageView = findViewById(R.id.new_activity)
+        newActivityButton.setOnClickListener {
+            val intent = Intent(this, NewActivity::class.java)
+            startActivity(intent)
         }
     }
 

@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.Duration
+import java.time.format.DateTimeFormatter
 
 class DetailFragment : Fragment() {
 
@@ -51,13 +52,21 @@ class DetailFragment : Fragment() {
         val duration = arguments?.getLong(ARG_DURATION)?.let { Duration.ofSeconds(it) }
         val distance = arguments?.getDouble(ARG_DISTANCE)
         val trainName = arguments?.getString(ARG_TRAIN_NAME)
-
-        view.findViewById<TextView>(R.id.list_item_date_time).text = date?.toString()
+        val dateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy")
+        view.findViewById<TextView>(R.id.list_item_date_time).text = date?.format(dateFormatter)
         view.findViewById<TextView>(R.id.list_item_distance_counter).text = "$distance км"
-        view.findViewById<TextView>(R.id.list_item_duration).text = duration?.toString()
+
+        view.findViewById<TextView>(R.id.list_item_duration).text = duration?.let {
+            val hours = it.toHours()
+            val minutes = it.toMinutesPart()
+            val seconds = it.toSecondsPart()
+            String.format("%02d:%02d:%02d", hours, minutes, seconds)
+        } ?: "00:00:00"
+
         view.findViewById<TextView>(R.id.expanded_title).text = trainName
-        view.findViewById<TextView>(R.id.list_item_start_value_time).text = startTime?.toString()
-        view.findViewById<TextView>(R.id.list_item_end_value_time).text = endTime?.toString()
+        val timeFormatter = DateTimeFormatter.ofPattern("HH:mm")
+        view.findViewById<TextView>(R.id.list_item_start_value_time).text = startTime?.format(timeFormatter)
+        view.findViewById<TextView>(R.id.list_item_end_value_time).text = endTime?.format(timeFormatter)
 
         val backButton = view.findViewById<View>(R.id.toolbar_back)
         backButton.setOnClickListener {
